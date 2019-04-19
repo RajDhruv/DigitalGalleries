@@ -1,0 +1,16 @@
+<%case from%>
+<%when :show%>
+	$('#user_detail').html("<%=j render 'user_profile'%>");
+	$('#main_timeline').html("<%=j render partial: 'painting/painting_iterator'%>");
+	$('#breadcrumb_content').html('&nbsp;| <%=@user.name%>');
+<%when :create%>
+	$('#user_profile_pic').attr("src","<%=@image.location.to_s%>");
+<%when :new_painting%>
+	$('#modal_heading').html("Create Paining");
+	$("#modal_body").html("<%=j render 'painting/form',painting:@painting%>");
+	$("#open_form_modal").click();
+<%when :create_painting%>
+	$('#modal_heading').html("");
+	$("#modal_body").html("");
+	$("#modal_close_button").click();
+<%end%>

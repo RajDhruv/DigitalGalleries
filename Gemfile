@@ -26,7 +26,13 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'devise', '~> 4.6', '>= 4.6.1'
+gem 'petergate', '~> 2.0', '>= 2.0.1'
+gem 'bootstrap', '~> 4.3', '>= 4.3.1'
+gem 'jquery-rails'
+gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+gem 'platipus', '~> 0.1.0'
+gem 'custom_loader', '~> 0.2.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
