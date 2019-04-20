@@ -11,7 +11,7 @@ Open terminal and migrate to application's root folder and execute command:
 
 After bundle has successfully executed run:
 
-	rails db:create
+	rails db:setup
 
 After DB has been created start server:
 
