@@ -21,5 +21,10 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  username: ehupyqcuchhnso
+  password: 9aa00c728b1c51544cdc93c67067cc5d4256359b1ceea29668814dd00ca5e9e9
+  database: decso51i09ecvi
+  host: ec2-54-221-236-144.compute-1.amazonaws.com
