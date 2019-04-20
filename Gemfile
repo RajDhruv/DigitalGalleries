@@ -33,6 +33,7 @@ gem 'jquery-rails'
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 gem 'platipus', '~> 0.1.0'
 gem 'custom_loader', '~> 0.2.0'
+gem 'kaminari'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

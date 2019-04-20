@@ -1,24 +1,28 @@
-# README
+# DigitalGalleries
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Digital Galleries provides an opportunity to artists worlwide to showcase their masterpieces on a global scale and to interact with other artists too.
 
-* Ruby version
+## Setup
 
-* System dependencies
+Open terminal and migrate to application's root folder and execute command:
 
-* Configuration
+	bundle
 
-* Database creation
+After bundle has successfully executed run:
 
-* Database initialization
+	rails db:create
 
-* How to run the test suite
+After DB has been created start server:
 
-* Services (job queues, cache servers, search engines, etc.)
+	rails s
 
-* Deployment instructions
+Now Open Browser and type:
 
-* ...
+	localhost:3000
+
+If you are using any other port on your local machine use that port number in place of 3000.
+
+## Note
+
+App is build using ruby-2.4.1 and rails 5.2.3.

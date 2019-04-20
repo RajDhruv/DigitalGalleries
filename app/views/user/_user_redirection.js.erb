@@ -6,11 +6,12 @@
 <%when :create%>
 	$('#user_profile_pic').attr("src","<%=@image.location.to_s%>");
 <%when :new_painting%>
-	$('#modal_heading').html("Create Paining");
+	$('#modal_heading').html("Create Painting");
 	$("#modal_body").html("<%=j render 'painting/form',painting:@painting%>");
 	$("#open_form_modal").click();
 <%when :create_painting%>
 	$('#modal_heading').html("");
 	$("#modal_body").html("");
-	$("#modal_close_button").click();
+	$("#close_modal").click();
+	$('#main_timeline').html("<%=j render partial: 'painting/painting_iterator'%>");
 <%end%>

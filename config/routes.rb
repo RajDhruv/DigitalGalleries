@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'home#index'
-  get 'home/index2'
+  root 'user#index'
+  post 'user/:painting_id/change_painting_privacy', to:"user#change_painting_privacy"
   resources :user, except: [:new, :edit, :update, :destroy, :index] do
   	member do
   		get 'painting/:painting_id',to:'user#show_painting', as:"show_painting"

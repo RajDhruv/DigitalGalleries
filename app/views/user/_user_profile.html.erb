@@ -1,10 +1,10 @@
 
-<section class="">
+<section class="" style="background: beige;">
 	<div class="container">
 		<div class="row" id="user_details">
 			<div class="col-md-3">
-				<center style="height: 100%">
-				<img src="<%=profile_display_image(@user)%>" id="user_profile_pic" style="height: 80%;width:75%;border-radius: 50%; padding: 15px 0px 15px 0px;">
+				<center>
+					<img src="<%=profile_display_image(@user)%>" id="user_profile_pic" style="height: 100%;width:75%;border-radius: 50%; padding: 15px 0px 15px 0px;">
 					<%if @owner%>
 					<label onclick="$('#image_location').click();" class="btn btn-success">Upload Image</label>
 					<%= form_for @image,:url=>user_index_path, html: { multipart: true ,method: 'post',:id=>"new_image"}, remote: true, authenticity_token: true do |f| %>
@@ -15,19 +15,34 @@
 				</center>
 			</div>
 			<div class="col-md-9">
-				<div class="">
-					<p class=""><%=@user.name%></p>
-					<div class="d-flex justify-content-between align-items-center">
-					</div>
-				</div>
-			</div>
+				<%if @owner%>
+					<label id="edit_link" style="float: right;">
+						<a href="/users/edit"  style="padding: 20px 20px 20px 20px;">Edit Profile</a>
+					</label>
+				<%end%>
+				<br>
+				<label id="headings">
+					<label id="user_main_details" style="float: left;">
+						<h1><%=@user.name%></h1>
+						<h6><%=@user.city%> , <%=@user.country%></h6>
+					</label>
+				</label>
+				<br>
+				<label id="about_user" style="float:left;">
+					<p><%=@user.about%></p>
+				</label>
+				<br>
+				<label id="contact_details" style="float:right;">
+					<h6><%=@user.email%>&nbsp;|&nbsp;<%=@user.phone%></h6>
+				</label>
+			</label>
 		</div>
 	</div>
 </section>
 <hr>
 <%if @owner%>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="open_form_modal" style="display: none;">
-    Add Painting
-  </button>
-  <%=link_to "Add Painting",painting_user_path(current_user.id), class: "btn btn-primary" ,style: "float:right;", remote: true%>
+	Add Painting
+</button>
+<%=link_to "Add Painting",painting_user_path(current_user.id), class: "btn btn-primary" ,style: "float:right; margin-right: 2%; margin-top: 1%;", remote: true%>
 <%end%>

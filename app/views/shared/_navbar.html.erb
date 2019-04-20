@@ -4,10 +4,10 @@
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
               <h4 class="text-white">About</h4>
-              <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+              <p class="text-muted">Digital Galleries offers you to upload and showcase your work and masterpieces online on a Global Scale and offers you an opportunity to connect with other artists worldwide!</p>
             </div>
             <div class="col-sm-4 offset-md-1 py-4">
-              <h4 class="text-white">Contact</h4>
+              <h4 class="text-white"><%=(current_user) ? current_user.name : "Nav-Links"%></h4>
               <ul class="list-unstyled">
                 <li><%=link_to "Home",root_path,class:"text-white"%></li>
               <%if current_user%>
@@ -15,6 +15,7 @@
                 <li><%=link_to "Logout",destroy_user_session_path,method: :delete,class:"text-white"%></li>
               <%else%>
                 <li><%=link_to "Login",new_user_session_path,method: :get,class:"text-white"%></li>
+                <li><%=link_to "Sign-up",new_user_registration_path,method: :get,class:"text-white"%></li>
               <%end%>
               </ul>
             </div>

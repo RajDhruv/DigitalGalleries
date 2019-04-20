@@ -8,7 +8,19 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
-
+<script type="text/javascript">
+  function change_painting_privacy(painting_id)
+  {
+    domain_name=window.location.origin;
+    $.ajax({
+      type:"post",
+      url:domain_name+"/user/"+painting_id+"/change_painting_privacy",
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+    })
+  }
+</script>
 <body>
 
 <div class="modal" id="myModal">
@@ -18,19 +30,14 @@
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title" id="modal_heading">Modal Heading</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <button type="button" class="close" data-dismiss="modal" id="close_modal">&times;</button>
         </div>
         
         <!-- Modal body -->
         <div class="modal-body" id="modal_body">
           Modal body..
         </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer" id="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal" id="modal_close_button">Cancel</button>
-        </div>
-        
+             
       </div>
     </div>
 </div>
@@ -53,10 +60,10 @@
 
   </main>
 
-  <footer class="text-muted">
+  <footer class="text-muted" style="padding-top:1rem;padding-bottom:1rem;">
     <div class="container">
       <p class="float-right">
-        <a href="#">Back to top</a>
+        <a onclick='$("html, body").animate({ scrollTop: 0 }, "slow");' style="cursor: pointer;">Back to top</a>
       </p>
       <%=Platipus::Renderer.copyright 'Dhruv Raj', 'All rights reserved'%>
     </div>
