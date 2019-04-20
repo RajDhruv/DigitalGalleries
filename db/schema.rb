@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2019_04_20_102350) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "imageable_type"
-    t.integer "imageable_id"
+    t.bigint "imageable_id"
     t.text "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_04_20_102350) do
 
   create_table "paintings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.integer "privacy"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -44,10 +44,12 @@ ActiveRecord::Schema.define(version: 2019_04_20_102350) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "image_id"
+    t.bigint "image_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["image_id"], name: "index_users_on_image_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "paintings", "users"
+  add_foreign_key "users", "images"
 end
