@@ -16,8 +16,8 @@ class UserController < ApplicationController
 	def create
 		@user=current_user
 		@image=Image.new
-	    @image.location=params[:image][:location]
-	    @image.imageable=current_user
+		@image.location=params[:image][:location]
+		@image.imageable=current_user
 		@image.save!
 		render partial: 'user_redirection.js.erb', locals:{from: :create}
 	end
@@ -33,7 +33,6 @@ class UserController < ApplicationController
 	def create_painting
 		@painting=Painting.new(name: params[:painting][:name], user:current_user)
 		if @painting.save
-			byebug
 			if params[:painting][:privacy]=="0"
 				@painting.public_painting!
 			else
@@ -65,7 +64,7 @@ class UserController < ApplicationController
 				@painting.private_painting!
 			end
 		end
-	 render nothing:true
+		render nothing:true
 	end
 
 	private

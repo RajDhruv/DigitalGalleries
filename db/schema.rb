@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2019_04_20_102350) do
 
-  create_table "images", force: :cascade do |t|
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "imageable_type"
     t.integer "imageable_id"
     t.text "location"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_04_20_102350) do
     t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable_type_and_imageable_id"
   end
 
-  create_table "paintings", force: :cascade do |t|
+  create_table "paintings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.integer "user_id"
     t.integer "privacy"
@@ -30,12 +30,12 @@ ActiveRecord::Schema.define(version: 2019_04_20_102350) do
     t.index ["user_id"], name: "index_paintings_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "name", default: "", null: false
     t.string "phone"
-    t.text "about", default: "", null: false
+    t.text "about"
     t.string "city"
     t.string "country"
     t.string "username"
