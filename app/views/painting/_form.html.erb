@@ -15,7 +15,25 @@
      </div>
       	<!-- Modal footer -->
         <div class="modal-footer" id="modal-footer">
-          <%= f.submit "Create" ,id:"new_painting_create",class:"btn btn-primary"%>
+          <%= f.submit "Create" ,id:"new_painting_create", class:"btn btn-primary", onclick: "return validate_painting();"%>
           <button type="button" class="btn btn-danger" data-dismiss="modal" id="modal_close_button">Cancel</button>
         </div>
 <%end%>
+<script type="text/javascript">
+  function validate_painting()
+  {
+    painting_name=$('#painting_name').val();
+    painting_img=$('#painting_image_location').val();
+    if(painting_name=="")
+    {
+      alert("Kindly Provide a Title to your Painting");
+      return false;
+    }
+    if(painting_img=="")
+    {
+      alert("Kindly Upload an Image");
+      return false;
+    }
+    return true
+  }
+</script>
