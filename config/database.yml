@@ -21,10 +21,10 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
+  adapter: mysql2
   pool: 5
   timeout: 5000
-  username: ehupyqcuchhnso
-  password: 9aa00c728b1c51544cdc93c67067cc5d4256359b1ceea29668814dd00ca5e9e9
-  database: decso51i09ecvi
-  host: ec2-54-221-236-144.compute-1.amazonaws.com
+  username: b241214bf192ed
+  password: a17b7d71
+  database: heroku_16069de6bd67d7c
+  host: us-cdbr-iron-east-02.cleardb.net
