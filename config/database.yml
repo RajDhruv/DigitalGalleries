@@ -24,7 +24,7 @@ production:
   adapter: mysql2
   pool: 5
   timeout: 5000
-  username: b241214bf192ed
-  password: a17b7d71
-  database: heroku_16069de6bd67d7c
+  username: b84ab7d9781a1c
+  password: ec1adb1b
+  database: heroku_b13ddf226778802
   host: us-cdbr-iron-east-02.cleardb.net
